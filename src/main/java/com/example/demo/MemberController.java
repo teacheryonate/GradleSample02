@@ -25,4 +25,11 @@ public class MemberController {
 		map.put("key", "2222");
 		return ResponseEntity.ok().body(map);
 	}
+	
+	@GetMapping("/check")
+	public ResponseEntity<?> check(){
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", "ok");
+		return ResponseEntity.ok().body(map);
+	}
 }
