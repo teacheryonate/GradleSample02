@@ -5,16 +5,24 @@ import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MainController {
+@RequestMapping("/member")
+public class MemberController {
 	
 	@GetMapping({"", "/"})
 	public ResponseEntity<?> index(){
 		Map<String, Object> map = new HashMap<>();
-		map.put("test", "1111111");
+		map.put("key", "11111");
 		return ResponseEntity.ok().body(map);
 	}
-
+	
+	@GetMapping("/health")
+	public ResponseEntity<?> health(){
+		Map<String, Object> map = new HashMap<>();
+		map.put("key", "2222");
+		return ResponseEntity.ok().body(map);
+	}
 }
